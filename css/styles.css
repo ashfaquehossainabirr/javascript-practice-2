@@ -44,29 +44,39 @@ section.contents::after {
 .box {
     width: 300px;
     height: 200px;
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 20px;
     border-radius: 12px;
-    background: lightgreen;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.box.one {
+    display: flex;
 }
 
 .box h1 {
     margin-bottom: 20px;
     text-align: center;
     font-size: 24px;
+    color: #fff;
 }
 
 .box input {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     padding: 10px 20px;
-    border-radius: 15px;
+    border-radius: 10px;
     outline: none;
     border: 1px solid transparent;
 }
 
 .box input:focus {
-    border: 1px solid orangered;
+    border: 1px solid #333;
 }
 
 .box button {
@@ -80,4 +90,18 @@ section.contents::after {
 
 .box button:active {
     background: hsl(0, 0%, 10%);
+}
+
+.box.two h1 {
+    margin-bottom: 10px;
+}
+
+.box.two p {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+span.player-one-name {
+    text-transform: capitalize;
 }

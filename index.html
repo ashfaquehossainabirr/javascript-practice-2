@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
+    <title>Number Guessing Game</title>
 
     <!-- CSS Source -->
     <link rel="stylesheet" href="./css/styles.css"/>
@@ -19,16 +19,38 @@
                 Player One Name
             </h1>
     
-            <input type="text" placeholder="Enter Your Name"/>
+            <input type="text" class="inputOne" placeholder="Enter Your Name"/>
     
             <button class="submit-btn-one">Submit</button>
+        </div>
+
+        <div class="box two">
+            <h1>
+                Hey <span class="player-one-name"></span>!
+            </h1>
+
+            <p>
+                Enter Your Guess Number
+            </p>
+    
+            <input type="number" class="guess-player-one" placeholder="Enter Number between 0 to 9"/>
+    
+            <button class="submit-btn-two">Submit</button>
+        </div>
+
+        <div class="box three">
+            <h1>
+                Player Two Name
+            </h1>
+    
+            <input type="text" class="inputTwo" placeholder="Enter Your Name"/>
+    
+            <button class="submit-btn-three">Submit</button>
         </div>
     </section>
 
 
-    <!-- <div class="box two"></div>
-    <div class="box three"></div>
-    <div class="box four"></div>
-    <div class="box result"></div> -->
+    <!-- JS Source -->
+    <script src="./js/script.js"></script>
 </body>
 </html>
