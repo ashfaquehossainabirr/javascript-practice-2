@@ -99,3 +99,7 @@ submitBtnFour.onclick = function () {
         resultText.innerHTML = "Congratulations! You all win this game"
     }
 }
+
+function reloadFunc() {
+    location.reload()
+}
