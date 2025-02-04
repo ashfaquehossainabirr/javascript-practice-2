@@ -85,10 +85,10 @@ submitBtnFour.onclick = function () {
 
     if(storedNumber == guessPlayerOne.value && storedNumber !== guessPlayerTwo.value) {
         playersDisplay.innerHTML = inputOne.value
-        resultText.innerHTML = "Congratulations you won"
+        resultText.innerHTML = "Congratulations! You won"
     } else if(storedNumber == guessPlayerTwo.value && storedNumber !== guessPlayerOne.value) {
         playersDisplay.innerHTML = inputTwo.value
-        resultText.innerHTML = "Congratulations you won"
+        resultText.innerHTML = "Congratulations! You won"
     }  else {
         playersDisplay.innerHTML = "Both of you"
         resultText.innerHTML = "Game over! You all lost this game"
