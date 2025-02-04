@@ -102,6 +102,22 @@ section.contents::after {
     color: #fff;
 }
 
+.box.four p {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
+}
+
 span.player-one-name {
     text-transform: capitalize;
+}
+
+span.player-two-name {
+    text-transform: capitalize;
+}
+
+.box p.result-text {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #fff;
 }
