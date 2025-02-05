@@ -76,27 +76,31 @@ submitBtnFour.onclick = function () {
     if(guessPlayerTwo.value == "") {
         alert("Please Enter Your Guess Number")
     } else {
-        if(guessPlayerOne.value !== guessPlayerTwo.value && guessPlayerOne.value >= 0 && guessPlayerOne.value <= 9) {
-            if(chances == 0) {
+        if(guessPlayerTwo.value >= 0 && guessPlayerTwo.value <= 9) {
+            if(guessPlayerOne.value !== guessPlayerTwo.value) {
+                if(chances == 0) {
+                    boxFour.style.display = "none"
+                    resultBox.style.display = "flex"
+    
+                    playersDisplay.innerHTML = inputOne.value
+                    resultText.innerHTML = `Congratulations! You beat ${inputTwo.value}`
+                }
+    
+                // console.log("Player 2 Guess Number: " + guessPlayerTwo.value)
+                chances--
+                guessPlayerTwo.value = ""
+            } else {
                 boxFour.style.display = "none"
                 resultBox.style.display = "flex"
-
-                playersDisplay.innerHTML = inputOne.value
-                resultText.innerHTML = `Congratulations! You beat ${inputTwo.value}`
+    
+                playersDisplay.innerHTML = inputTwo.value
+                resultText.innerHTML = "Congratulations! You won"
             }
-
-            // console.log("Player 2 Guess Number: " + guessPlayerTwo.value)
-            chances--
-            guessPlayerTwo.value = ""
+    
+            chancesDisplay.innerHTML = chances
         } else {
-            boxFour.style.display = "none"
-            resultBox.style.display = "flex"
-
-            playersDisplay.innerHTML = inputTwo.value
-            resultText.innerHTML = "Congratulations! You won"
+            alert("Please Choose a number between 0 to 9")
         }
-
-        chancesDisplay.innerHTML = chances
     }
 }
 
