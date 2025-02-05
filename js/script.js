@@ -22,12 +22,14 @@ const playerTwoNameDisplay = document.querySelector('.player-two-name')
 const playersDisplay = document.querySelector('.players-display')
 const resultText = document.querySelector('.result-text')
 
+const chancesDisplay = document.querySelector('.chances')
+
 
 //=====================================================================
-// -- Stored Number
+// -- Chances Value
 //=====================================================================
 
-const storedNumber = 7
+let chances = 3
 
 
 //=====================================================================
@@ -52,7 +54,7 @@ submitBtnTwo.onclick = function () {
             boxTwo.style.display = "none"
             boxThree.style.display = "flex"
 
-            console.log("Player 1 Guess Number: " + guessPlayerOne.value)
+            // console.log("Player 1 Guess Number: " + guessPlayerOne.value)
         } else {
             alert("Please Choose a number between 0 to 9")
         }
@@ -66,6 +68,7 @@ submitBtnThree.onclick = function () {
         boxThree.style.display = "none"
         boxFour.style.display = "flex"
         playerTwoNameDisplay.innerHTML = inputTwo.value
+        chancesDisplay.innerHTML = chances
     }
 }
 
@@ -73,30 +76,27 @@ submitBtnFour.onclick = function () {
     if(guessPlayerTwo.value == "") {
         alert("Please Enter Your Guess Number")
     } else {
-        if(guessPlayerTwo.value >= 0 && guessPlayerTwo.value <= 9) {
+        if(guessPlayerOne.value !== guessPlayerTwo.value) {
+            if(chances == 0) {
+                boxFour.style.display = "none"
+                resultBox.style.display = "flex"
+
+                playersDisplay.innerHTML = inputOne.value
+                resultText.innerHTML = `Congratulations! You beat ${inputTwo.value}`
+            }
+
+            // console.log("Player 2 Guess Number: " + guessPlayerTwo.value)
+            chances--
+            guessPlayerTwo.value = ""
+        } else {
             boxFour.style.display = "none"
             resultBox.style.display = "flex"
 
-            console.log("Player 2 Guess Number: " + guessPlayerTwo.value)
-        } else {
-            alert("Please Choose a number between 0 to 9")
+            playersDisplay.innerHTML = inputTwo.value
+            resultText.innerHTML = "Congratulations! You won"
         }
-    }
 
-    if(storedNumber == guessPlayerOne.value && storedNumber !== guessPlayerTwo.value) {
-        playersDisplay.innerHTML = inputOne.value
-        resultText.innerHTML = "Congratulations! You won"
-    } else if(storedNumber == guessPlayerTwo.value && storedNumber !== guessPlayerOne.value) {
-        playersDisplay.innerHTML = inputTwo.value
-        resultText.innerHTML = "Congratulations! You won"
-    }  else {
-        playersDisplay.innerHTML = "Both of you"
-        resultText.innerHTML = "Game over! You all lost this game"
-    }
-
-    if(storedNumber == guessPlayerOne.value && storedNumber == guessPlayerTwo.value) {
-        playersDisplay.innerHTML = "Both of you"
-        resultText.innerHTML = "Congratulations! You all win this game"
+        chancesDisplay.innerHTML = chances
     }
 }
 

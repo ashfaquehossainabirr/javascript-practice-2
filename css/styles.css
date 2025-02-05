@@ -102,6 +102,10 @@ section.contents::after {
     color: #fff;
 }
 
+.box.four {
+    height: 250px;
+}
+
 .box.four p {
     margin-bottom: 15px;
     text-align: center;
