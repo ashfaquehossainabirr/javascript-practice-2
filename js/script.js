@@ -76,7 +76,7 @@ submitBtnFour.onclick = function () {
     if(guessPlayerTwo.value == "") {
         alert("Please Enter Your Guess Number")
     } else {
-        if(guessPlayerOne.value !== guessPlayerTwo.value) {
+        if(guessPlayerOne.value !== guessPlayerTwo.value && guessPlayerOne.value >= 0 && guessPlayerOne.value <= 9) {
             if(chances == 0) {
                 boxFour.style.display = "none"
                 resultBox.style.display = "flex"
